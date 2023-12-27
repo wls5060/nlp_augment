@@ -1,9 +1,3 @@
-# -*- coding: UTF-8 -*-
-# !/usr/bin/python
-# @time     :2019/4/1 10:35
-# @author   :most of zhanlaoban; some of mo(gen some filter).     main code is there: https://github.com/zhanlaoban/eda_nlp_for_Chinese
-# @function :enhance text by eda, eda is replace, insert, swap, delete
-
 from nlp_utils.text_tools import load_word2vec_model
 from conf.path_config import word2_vec_path
 from nlp_utils.text_tools import is_total_english
