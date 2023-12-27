@@ -1,0 +1,1 @@
+from utils.text_tools import load_word2vec_model
