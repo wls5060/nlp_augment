@@ -1,8 +1,3 @@
-# -*- coding: UTF-8 -*-
-# !/usr/bin/python
-# @time     :2019/5/10 9:13
-# @author   :Mo
-# @function :path of FeatureProject
 import pathlib
 import sys
 import os

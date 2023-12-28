@@ -1,10 +1,3 @@
-# -*- coding: UTF-8 -*-
-# !/usr/bin/python
-# @time     :2019/4/3 11:23
-# @author   :Mo
-# @function :path
-
-
 import pathlib
 import sys
 import os
@@ -20,6 +13,9 @@ stop_words_path =  projectdir + '/Data/common_words/stopwords.txt'
 
 # corpus
 chicken_and_gossip_path = projectdir + '/Data/corpus/chicken_and_gossip.txt'
+
+# eda_gen_path
+eda_gen_path = projectdir + '/Data/eda_gen/result.txt'
 
 # word2vec
 w2v_model_merge_short_path = projectdir + "/Data/chinese_vector/w2v_model_merge_short.vec"

@@ -1,15 +1,10 @@
-# -*- coding: UTF-8 -*-
-# !/usr/bin/python
-# @Time     :2019/3/25 14:11
-# @author   :Mo
-# @function :generate disorder sentence by marko
-
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
 from conf.path_config import chicken_and_gossip_path
+from conf.path_config import eda_gen_path
 from conf.path_config import projectdir
-from utils.text_tools import txtRead
-from utils.text_tools import txtWrite
+from nlp_utils.text_tools import txtRead
+from nlp_utils.text_tools import txtWrite
 from jieba import analyse
 import random
 import jieba
@@ -187,10 +182,13 @@ if __name__ == "__main__":
     # 读取一个文件，再生成句子
     txt_path = chicken_and_gossip_path
     sentence_list = txtRead(txt_path)
-    sentence_list = sentence_list[0:100]
+    sentence_list = sentence_list[0:10]
+    print(sentence_list)
     enhance_texts = generate_syns_from_list(sentence_list, begin_word="tfidf", p=0.1)
+    '''
     for enhance_texts_one in enhance_texts:
         try:
             print(enhance_texts_one)
         except Exception as e:
             print(str(e))
+    '''

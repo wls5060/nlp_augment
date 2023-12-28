@@ -1,9 +1,9 @@
 MANIFEST.in
+README.md
 setup.py
 AugmentText/__init__.py
 AugmentText/augment_eda/__init__.py
 AugmentText/augment_eda/enhance_eda.py
-AugmentText/augment_eda/enhance_eda_v2.py
 AugmentText/augment_eda/enhance_word2vec.py
 AugmentText/augment_keyword/__init__.py
 AugmentText/augment_keyword/keyword_sim.py
@@ -43,6 +43,7 @@ Data/chinese_xlnet_mid_L-24_H-768_A-12/__init__.py
 Data/common_words/__init__.py
 Data/common_words/stopwords.txt
 Data/corpus/chicken_and_gossip.txt
+Data/eda_gen/result.txt
 augment.egg-info/PKG-INFO
 augment.egg-info/SOURCES.txt
 augment.egg-info/dependency_links.txt
@@ -51,7 +52,6 @@ code/__init__.py
 code/augment.py
 code/eda.py
 conf/__init__.py
-conf/augment_constant.py
 conf/feature_config.py
 conf/path_config.py
 nlp_utils/__init__.py
