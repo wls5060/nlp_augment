@@ -1,5 +1,4 @@
 from nlp_utils.text_tools import load_word2vec_model
-from conf.path_config import word2_vec_path
 from nlp_utils.text_tools import is_total_english
 from nlp_utils.text_tools import is_total_number
 from conf.path_config import stop_words_path
@@ -174,10 +173,10 @@ if __name__ == "__main__":
     print('输入: ')
     sen = input()
     syn = []
-    syn.append(eda(sentence=sen,eda_method='sr',num_aug = 55))
-    syn.append(eda(sentence=sen,eda_method='ri',num_aug = 55))
-    syn.append(eda(sentence=sen,eda_method='rs',num_aug = 55))
-    syn.append(eda(sentence=sen,eda_method='rd',num_aug = 55))
+    syn.append(eda(sentence=sen,eda_method='sr',num_aug = 100))
+    # syn.append(eda(sentence=sen,eda_method='ri',num_aug = 55))
+    # syn.append(eda(sentence=sen,eda_method='rs',num_aug = 55))
+    # syn.append(eda(sentence=sen,eda_method='rd',num_aug = 55))
     print(syn)
     with open(eda_gen_path, 'w', encoding = 'utf-8') as f:
         for lst in syn:

@@ -259,8 +259,3 @@ def text_preprocess(text):
         return text
 
 
-#todo #句子改写，同义词替换，去停用词等
-
-
-if __name__ == '__main__':
-    gg = 0

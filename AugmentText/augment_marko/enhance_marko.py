@@ -1,6 +1,5 @@
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
-from conf.path_config import chicken_and_gossip_path
 from conf.path_config import eda_gen_path
 from conf.path_config import projectdir
 from nlp_utils.text_tools import txtRead
@@ -19,9 +18,6 @@ textrank = analyse.textrank
 def create_model(model_markov, datalist):
     """
       create model of sentence sequence
-    :param model_marko: dict
-    :param datalist: list of set
-    :return: set
     """
     for line in datalist:
         line = list(jieba.cut(line.lower().strip(), cut_all=False))
@@ -42,9 +38,6 @@ def create_model(model_markov, datalist):
 def generate_random_1(model_markov, gen_words):
     """
        根据马尔科夫链生成同义句，本质就是根据一个词走到另外一个词去
-    :param generated: list, empty
-    :param model_marko: dict, marko of dict
-    :return: str
     """
     while True:
         if not gen_words:
@@ -64,12 +57,7 @@ def generate_random_1(model_markov, gen_words):
 
 def generate_random_select(generated, model_marko, twice=100000, len_min=5):
     """
-      默认遍历1000次生成句子
-    :param generated: list, one key word, rg.["建行"]
-    :param model_marko: dict, transition matrix
-    :param twice: int, twice
-    :param len_min: int, min length of gen sentence 
-    :return: list, syn_generates
+      
     """
     syn_generates = set()
     for num in range(twice):
@@ -83,9 +71,6 @@ def generate_random_select(generated, model_marko, twice=100000, len_min=5):
 def get_keyword_from_tf(sentences, p):
     """
       获取某个类型下语料的热词
-    :param sentences: list, cuted sentences, filter by " "
-    :param p: float, rate, 0 < p < 1
-    :return: list, words
     """
     sentence_cut_list = [" ".join(list(jieba.cut(text.strip(), cut_all=False, HMM=True))) for text in sentences]
     # token_pattern指定统计词频的模式, 不指定, 默认如英文, 不统计单字
@@ -103,9 +88,6 @@ def get_keyword_from_tf(sentences, p):
 def get_begin_word(sentences, p):
     """
       获取jieba切词后
-    :param sentences:list, sentences of input 
-    :param p: float, 
-    :return: list, key_words
     """
     sentence_cut_begin_list = [list(jieba.cut(text.strip(), cut_all=False, HMM=True))[0] for text in sentences]
     len_begin_p = int(len(sentence_cut_begin_list) * p)
@@ -115,8 +97,6 @@ def get_begin_word(sentences, p):
 def get_keyword_from_jieba_tfidf(sentences, p):
     """
       基于TF-IDF算法进行关键词抽取
-    :param sentence: str, sentence of input
-    :return: list, return keyword
     """
     sentence_cut_list = [" ".join(list(jieba.cut(text.strip(), cut_all=False, HMM=True))) for text in sentences]
     sentence_cut_list_str = str(sentence_cut_list)
@@ -128,8 +108,6 @@ def get_keyword_from_jieba_tfidf(sentences, p):
 def get_keyword_from_jieba_textrank(sentences, p):
     """
       基于textrank算法进行关键词抽取
-    :param sentence: str, sentence of input
-    :return: list, return keyword
     """
     key_words = []
     for sentences_one in sentences:
@@ -145,10 +123,6 @@ def get_keyword_from_jieba_textrank(sentences, p):
 def generate_syns_from_list(sentence_list, begin_word="tfidf", p=0.1):
     """
       读取txt文件原语句，获取没有的生成句子
-    :param txt_path: str, path of corpus
-    :param begin_word: str, "tf", "tfidf", "textrank"
-    :param p: float, rate, 0 < p < 1 
-    :return: list, generated sentence
     """
     # 获取热门关键词
     if begin_word == "tf":
