@@ -17,7 +17,7 @@ textrank = analyse.textrank
 
 def create_model(model_markov, datalist):
     """
-      create model of sentence sequence
+      
     """
     for line in datalist:
         line = list(jieba.cut(line.lower().strip(), cut_all=False))
@@ -37,7 +37,7 @@ def create_model(model_markov, datalist):
 
 def generate_random_1(model_markov, gen_words):
     """
-       根据马尔科夫链生成同义句，本质就是根据一个词走到另外一个词去
+       根据马尔科夫链生成同义句
     """
     while True:
         if not gen_words:

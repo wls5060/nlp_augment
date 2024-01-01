@@ -173,7 +173,8 @@ if __name__ == "__main__":
     print('输入: ')
     sen = input()
     syn = []
-    syn.append(eda(sentence=sen,eda_method='sr',num_aug = 100))
+    print()
+    syn.append(eda(sentence=sen,eda_method='sr',num_aug = 55))
     # syn.append(eda(sentence=sen,eda_method='ri',num_aug = 55))
     # syn.append(eda(sentence=sen,eda_method='rs',num_aug = 55))
     # syn.append(eda(sentence=sen,eda_method='rd',num_aug = 55))
